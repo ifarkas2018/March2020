@@ -199,7 +199,7 @@
                                         <!-- filling in the password: required -->
                                         <input type="password" class="form-control form-control-sm" name="passw1" id="passw1" maxlength="17" 
                                                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter and at least 8 or more characters" 
-                                               required> 
+                                               onfocusout='matchPass()' required> 
                                         <span id="passw1_message" class="text_color">* Required Field</span>
                                     </div>
                                     

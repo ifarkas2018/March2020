@@ -95,6 +95,7 @@
                                         </tr>
                                     </tbody>
                                 </table>
+                                <br />
                                 <!-- information about the store - Norwich -->
                                 <span class="text-warning">
                                     <font size="+2">Norwich</font><br />

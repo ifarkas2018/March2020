@@ -109,11 +109,11 @@
                             <ul class="navbar-nav mr-auto">
                                 <!-- About link on the navbar -->
                                 <li class="nav-item">
-                                    <a class="nav-link" href="AddSessVar" onclick="cookieFillIn('about_page.jsp')">About</a>
+                                    <a class="nav-link" href="AddSessVar" onclick="cookieFillIn('about_page.jsp')">Über Uns</a>
                                 </li>
                                 <!-- Contact link on the navbar -->
                                 <li class="nav-item">
-                                    <a class="nav-link" href="AddSessVar" onclick="cookieFillIn('contact_page.jsp')">Contact</a>
+                                    <a class="nav-link" href="AddSessVar" onclick="cookieFillIn('contact_page.jsp')">Kontakt</a>
                                 </li>
                             </ul>
                                                             

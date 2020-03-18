@@ -17,7 +17,7 @@
         <script src="javascript/validationJS.js"></script> 
         
         <script>
-            NUM_FIELDS = 5; // number of the input fields on the form 
+            NUM_FIELDS = 6; // number of the input fields on the form 
             INPUT_FIELDS = 12; // number of the max umber of input fields (on all forms) 
             EQUAL_PASSW = 'true'; // are the entered passwords the same
            
@@ -28,27 +28,23 @@
 
                 if (passwd1 == passwd2) {  
                     EQUAL_PASSW= 'true';
-                    // remove the message below the password input field
-                    passw1_message.innerHTML = "* Required Field";
-                    passw2_message.innerHTML = "* Required Field";
+                    passw_message.innerHTML = "";
                 }  else {  
                     EQUAL_PASSW = 'false'; 
-                    // show the message below the password input field
-                    passw1_message.innerHTML = "* Passwords must match";
-                    passw2_message.innerHTML = "* Passwords must match";
+                    passw_message.innerHTML = "* Bitte überprüfen Sie Ihre Passwortangabe <br />";
                 }  
             }  
            
             // setCookie: creates cookie inputI = value in the input field ; (I - number 0..5)
             function setCookie() {           
                 var i;
-                var inp_names = new Array('username', 'first_name', 'last_name', 'adm_yes', 'adm_no'); // names of the input fields
+                var inp_names = new Array('username', 'first_name', 'last_name', 'adm_yes', 'adm_no', 'anrede'); // names of the input fields
                 
                 // for the radio buttons set the cookie to the default
                 document.cookie = "input3" + "=;";
                 document.cookie = "input4" + "=;";
                 for (i = 0; i < NUM_FIELDS; i++) {
-                    if ((i==0) || (i==1) || (i==2)) {
+                    if ((i==0) || (i==1) || (i==2) || (i==5)) {
                         document.cookie = "input" + i + "=" + document.getElementById(inp_names[i]).value + ";"; // creating a cookie
                     } else if ((i==3) || (i==4)) {
                         if (document.getElementById(inp_names[i]).checked){
@@ -112,7 +108,7 @@
                     <br /><br />
                     <div> 
                         <!-- horizontally centering the picture using center-image, img-fluid is for responsive image -->
-                        <img src="images/books.png" class="img-fluid center-image" alt="Foto von Büchern" title="Foto von Büchern"> 
+                        <img src="images/books.png" class="img-fluid center-image" alt="Foto mit Büchern" title="Foto mit Büchern"> 
                     </div>
                 </div>
                 
@@ -133,6 +129,7 @@
                                     String input2 = ""; // read the value which was before in the 3rd input field and show it again                
                                     String input3 = ""; // was the yes radio button checked 
                                     String input4 = ""; // was the no radio button checked 
+                                    String input5 = ""; // was the title choosen
                                     
                                     // IDEA : fill_in variable is set in SubscrServl.java - true if some of the input session variables were set,
                                     // and they need to be added to the form here - this true if the user BEFORE LOADED THIS PAGE and after that he entered
@@ -162,6 +159,9 @@
                                                 if (LesenMethoden.sessVarExists(hSession2, "input4")) {
                                                     input4 = String.valueOf(hSession2.getAttribute("input4")); // was the yes radion button checked
                                                 }   
+                                                if (LesenMethoden.sessVarExists(hSession2, "input5")) {
+                                                    input5 = String.valueOf(hSession2.getAttribute("input5")); // was the yes radion button checked
+                                                }   
                                             } 
                                         }
                                         hSession2.setAttribute("fill_in", "false"); // the input fields don't need to be filled in
@@ -170,7 +170,30 @@
                                     LesenMethoden.setToEmptyInput(hSession2); // setToEmpty: set the session variable values to "" for the variables named input0, input1, ...
                                 %>
 
-                                <form name="signup" id="signup" action="SignUpServlet" onsubmit="return checkForm();" method="post">                                   
+                                <form name="signup" id="signup" action="SignUpServlet" onsubmit="return checkFormPassw(document.signup.passw1.value, document.signup.passw2.value, 'passw_message');" method="post"> 
+                                    <div class="form-group">
+                                        <label for="anrede">Anrede</label>
+                                        <!-- creating a drop down list; form-control-sm is used for smaller control -->
+                                        <select class="form-control form-control-sm" name="anrede" id="anrede" onchange="setCookie()">
+                                            <% if (input5.equalsIgnoreCase("none")){ %>
+                                                 <option value="none" selected> </option> <!-- options shown in the drop down list -->
+                                            <% } else { %>
+                                                 <option value="none"> </option>
+                                            <% } %>
+                                            <% if (input5.equalsIgnoreCase("frau")){ %>
+                                                 <option value="frau" selected>Frau</option> <!-- options shown in the drop down list -->
+                                            <% } else { %>
+                                                 <option value="frau">Frau</option>
+                                            <% } %>
+                                            
+                                            <% if (input5.equalsIgnoreCase("herr")){ %>
+                                                 <option value="herr" selected>Herr</option> <!-- options shown in the drop down list -->
+                                            <% } else { %>
+                                                 <option value="herr">Herr</option>
+                                            <% } %>
+                                        </select>
+                                    </div>
+                                        
                                     <!-- creating the input element for the first name -->
                                     <div class="form-group">
                                         <label for="first_name">Vorname</label> <!-- first name label -->
@@ -197,18 +220,20 @@
                                     <div class="form-group">
                                         <label for="passw1">Passwort</label> <!-- password name label -->
                                         <!-- filling in the password: required -->
-                                        <input type="password" class="form-control form-control-sm" name="passw1" id="passw1" maxlength="17" 
-                                               pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter and at least 8 or more characters" 
-                                               required> 
-                                        <span id="passw1_message" class="text_color">* Pflichtfeld</span>
+                                        <input type="password" class="form-control form-control-sm" name="passw1" id="passw1" maxlength="17"
+                                               onfocusout='matchPass()' required> 
+                                        <span id="passw1_message" class="text_color">* Pflichtfeld</span><br />
                                     </div>
+                                    
+                                    <span id="passw_pattern" class="text_size">Ihr Passwort muss mindestens 8 Zeichen lang sein und es muss Groß-, Kleinbuchstaben und Zahlen enthalten</span>
+                                    <br />
+                                    <span id="passw_message" class="text_color"></span>
+                                    <br />
                                     
                                     <!-- creating the input element for re-entering the password -->
                                     <div class="form-group">
                                         <label for="passw2">Passwort wiederholen</label> <!-- password name label -->
-                                        
                                         <input type="password" class="form-control form-control-sm" name="passw2" id="passw2" maxlength="17" 
-                                               pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter and at least 8 or more characters" 
                                                onfocusout='matchPass()' required> 
                                         <span id="passw2_message" class="text_color">* Pflichtfeld</span>
                                     </div>

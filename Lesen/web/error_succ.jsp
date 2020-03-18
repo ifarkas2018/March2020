@@ -148,7 +148,7 @@
                                 %>
                                         <form action="login_page.jsp" method="post">
                                 <%
-                                    } else if (sSource.equalsIgnoreCase("Ausmelden")) {
+                                    } else if (sSource.equalsIgnoreCase("Ausmelden") || sSource.equalsIgnoreCase("Das Buch")) {
                                 %>
                                         <form action="index.jsp" method="post">
                                 <%
@@ -172,6 +172,11 @@
                                 %>
                                         <!-- adding the To button to the form; btn-sm is used for smaller (narrower) size of the control -->
                                         <button type="submit" class="btn btn-info btn-sm">Buch löschen</button>
+                                <% 
+                                   } else if (sSource.equalsIgnoreCase("Das Buch")) {
+                                %>
+                                        <!-- adding the To button to the form; btn-sm is used for smaller (narrower) size of the control -->
+                                        <button type="submit" class="btn btn-info btn-sm">Lesen</button>
                                 <%
                                    } else {
                                 %>

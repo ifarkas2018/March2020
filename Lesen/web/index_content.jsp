@@ -120,7 +120,7 @@
                                 // assign title, author name, price, isbn and description to the variables
                                 bookInformation(rs);
                             } catch (SQLException e) {
-                                System.out.println("An exception occured: " + e.getMessage());
+                                System.out.println("Eine Ausnahme ist aufgetreten: " + e.getMessage());
                             }
                         %>
                         
@@ -132,7 +132,7 @@
                                 <!-- @@@@@@@@@@@ DO IT -- change the TITLE and ALT ( in the img tag ) to the title of the book -->
                                 
                                 <!-- pull-left mr-2 is used for spacing between the image and the text -->
-                                <a href="ShowBook"><img src="images/book_1.jpg" class="img-fluid  float-left pull-left mr-2" onclick="createCookieIndex(1)" alt="picture of a book" title="picture of a book"></a>
+                                <a href="ShowBook"><img src="images/book_1.jpg" class="img-fluid  float-left pull-left mr-2" onclick="createCookieIndex(1)" alt="Foto mit Büchern" title="Foto mit Büchern"></a>
                                 <% if (!sAuthor.equalsIgnoreCase("")) { %>
                                     <span class="pic_text"><%= sAuthor%></span><br/>
                                 <% } 
@@ -142,7 +142,7 @@
                                 <% } 
                                    if (!sPrice.equalsIgnoreCase("")) {
                                 %>
-                                    <span class="pic_text">GBP <%= sPrice %></span><br/>
+                                    <span class="pic_text">&euro; <%= sPrice %></span><br/>
                                 <% } %>
                             </div>
                         </div> 
@@ -157,7 +157,7 @@
                                 <% } 
                                    if (!sPrice.equalsIgnoreCase("")) { 
                                 %>
-                                    <div class="pic_text_below">GBP <%= sPrice %></div>
+                                    <div class="pic_text_below">&euro; <%= sPrice %></div>
                                 <% } %>
                             </div>
                         </div>
@@ -170,7 +170,7 @@
                                 // assign title, author name, price, isbn and description to the variables
                                 bookInformation(rs);
                             } catch (SQLException e) {
-                                System.out.println("An exception occured: " + e.getMessage());
+                                System.out.println("Eine Ausnahme ist aufgetreten: " + e.getMessage());
                             }
                         %>
                         
@@ -183,7 +183,7 @@
                             <div class="col-lg-11 col-md-11 col-sm-11">
                                 <!-- @@@@@@@@@@@ DO IT -- change the TITLE and ALT (in the img tag) to the title of the book -->
                                 <!-- pull-left mr-2 is used for spacing between the image and the text -->
-                                <a href="ShowBook"><img src="images/bk_2.jpg" class="img-fluid  float-left pull-left mr-2" onclick="createCookieIndex(2)" alt="picture of a book" title="picture of a book"></a>
+                                <a href="ShowBook"><img src="images/bk_2.jpg" class="img-fluid  float-left pull-left mr-2" onclick="createCookieIndex(2)" alt="Foto mit Büchern" title="Foto mit Büchern"></a>
                                 <% if (!sAuthor.equalsIgnoreCase("")) { %>
                                     <span class="pic_text"><%= sAuthor%></span><br/>
                                 <% } 
@@ -193,7 +193,7 @@
                                 <% } 
                                    if (!sPrice.equalsIgnoreCase("")) {
                                 %>
-                                    <span class="pic_text">GBP <%= sPrice %></span><br/>
+                                    <span class="pic_text">&euro; <%= sPrice %></span><br/>
                                 <% } %>
                             </div>
                         </div> 
@@ -209,7 +209,7 @@
                                 <% } 
                                    if (!sPrice.equalsIgnoreCase("")) { 
                                 %>
-                                    <div class="pic_text_below">GBP <%= sPrice %></div>
+                                    <div class="pic_text_below">&euro; <%= sPrice %></div>
                                 <% } %>
                             </div>
                         </div>
@@ -222,7 +222,7 @@
                                 // assign title, author name, price, isbn and description to the variables
                                 bookInformation(rs);
                             } catch (SQLException e) {
-                                System.out.println("An exception occured: " + e.getMessage());
+                                System.out.println("Eine Ausnahme ist aufgetreten: " + e.getMessage());
                             }
                         %>
                         
@@ -235,7 +235,7 @@
                                 <!-- @@@@@@@@@@@ DO IT -- change the TITLE and ALT (in the img tag) to the title of the book -->
                                 
                                 <!-- pull-left mr-2 is used for spacing between the image and the text -->
-                                <a href="ShowBook"><img src="images/book_3.jpg" class="img-fluid  float-left pull-left mr-2" onclick="createCookieIndex(3)" alt="picture of a book" title="picture of a book"></a>
+                                <a href="ShowBook"><img src="images/book_3.jpg" class="img-fluid  float-left pull-left mr-2" onclick="createCookieIndex(3)" alt="Foto mit Büchern" title="Foto mit Büchern"></a>
                                 <% if (!sAuthor.equalsIgnoreCase("")) { %>
                                     <span class="pic_text"><%= sAuthor%></span><br/>
                                 <% } 
@@ -245,7 +245,7 @@
                                 <% } 
                                    if (!sPrice.equalsIgnoreCase("")) {
                                 %>
-                                    <span class="pic_text">GBP <%= sPrice %></span><br/>
+                                    <span class="pic_text">&euro; <%= sPrice %></span><br/>
                                 <% } %>
                             </div>
                         </div> 
@@ -260,7 +260,7 @@
                                 <% } 
                                    if (!sPrice.equalsIgnoreCase("")) { 
                                 %>
-                                    <div class="pic_text_below">GBP <%= sPrice %></div>
+                                    <div class="pic_text_below">&euro; <%= sPrice %></div>
                                 <% } %>
                             </div>
                         </div>
@@ -273,7 +273,7 @@
                                 // assign title, author name, price, isbn and description to the variables
                                 bookInformation(rs);
                             } catch (SQLException e) {
-                                System.out.println("An exception occured: " + e.getMessage());
+                                System.out.println("Eine Ausnahme ist aufgetreten: " + e.getMessage());
                             }
                         %>
                         
@@ -285,7 +285,7 @@
                             <div class="col-lg-11 col-md-11 col-sm-11">
                                 <!-- @@@@@@@@@@@ DO IT -- change the TITLE and ALT ( in the img tag ) to the title of the book -->
                                 <!-- pull-left mr-2 is used for spacing between the image and the text -->
-                                <a href="ShowBook"><img src="images/book_4.jpg" class="img-fluid  float-left pull-left mr-2" onclick="createCookieIndex(4)" alt="picture of a book" title="picture of a book"></a>
+                                <a href="ShowBook"><img src="images/book_4.jpg" class="img-fluid  float-left pull-left mr-2" onclick="createCookieIndex(4)" alt="Foto mit Büchern" title="Foto mit Büchern"></a>
                                 <% if (!sAuthor.equalsIgnoreCase("")) { %>
                                     <span class="pic_text"><%= sAuthor%></span><br/>
                                 <% } 
@@ -295,7 +295,7 @@
                                 <% } 
                                    if (!sPrice.equalsIgnoreCase("")) {
                                 %>
-                                    <span class="pic_text">GBP <%= sPrice %></span><br/>
+                                    <span class="pic_text">&euro; <%= sPrice %></span><br/>
                                 <% } %>
                             </div>
                         </div> 
@@ -311,7 +311,7 @@
                                 <% } 
                                    if (!sPrice.equalsIgnoreCase("")) { 
                                 %>
-                                    <div class="pic_text_below">GBP <%= sPrice %></div>
+                                    <div class="pic_text_below">&euro; <%= sPrice %></div>
                                 <% } %>
                             </div>
                         </div>
@@ -324,7 +324,7 @@
                                 // assign title, author name, price, isbn and description to the variables
                                 bookInformation(rs);
                             } catch (SQLException e) {
-                                System.out.println("An exception occured: " + e.getMessage());
+                                System.out.println("Eine Ausnahme ist aufgetreten: " + e.getMessage());
                             }
                         %>
                         
@@ -337,7 +337,7 @@
                                 <!-- @@@@@@@@@@@ DO IT -- change the TITLE and ALT ( in the img tag ) to the title of the book -->
                                 
                                 <!-- pull-left mr-2 is used for spacing between the image and the text -->
-                                <a href="ShowBook"><img src="images/book_5.jpg" class="img-fluid  float-left pull-left mr-2" onclick="createCookieIndex(5)" alt="picture of a book" title="picture of a book"></a>
+                                <a href="ShowBook"><img src="images/book_5.jpg" class="img-fluid  float-left pull-left mr-2" onclick="createCookieIndex(5)" alt="Foto mit Büchern" title="Foto mit Büchern"></a>
                                 <% if (!sAuthor.equalsIgnoreCase("")) { %>
                                     <span class="pic_text"><%= sAuthor%></span><br/>
                                 <% } 
@@ -347,7 +347,7 @@
                                 <% } 
                                    if (!sPrice.equalsIgnoreCase("")) {
                                 %>
-                                    <span class="pic_text">GBP <%= sPrice %></span><br/>
+                                    <span class="pic_text">&euro; <%= sPrice %></span><br/>
                                 <% } %>
                             </div>
                         </div> 
@@ -362,7 +362,7 @@
                                 <% } 
                                    if (!sPrice.equalsIgnoreCase("")) { 
                                 %>
-                                    <div class="pic_text_below">GBP <%= sPrice %></div>
+                                    <div class="pic_text_below">&euro; <%= sPrice %></div>
                                 <% } %>
                             </div>
                         </div>
@@ -381,7 +381,7 @@
                                 // assign title, author name, price, isbn and description to the variables
                                 bookInformation(rs);
                             } catch (SQLException e) {
-                                System.out.println("An exception occured: " + e.getMessage());
+                                System.out.println("Eine Ausnahme ist aufgetreten: " + e.getMessage());
                             }
                         %>
                         
@@ -390,7 +390,7 @@
                                 <!-- @@@@@@@@@@@ DO IT -- change the TITLE and ALT ( in the img tag ) to the title of the book -->
                                 
                                 <!-- pull-left mr-2 is used for spacing between the image and the text -->
-                                <a href="ShowBook"><img src="images/book_6.jpg" class="img-fluid  float-left pull-left mr-2" onclick="createCookieIndex(6)" alt="picture of a book" title="picture of a book"></a>
+                                <a href="ShowBook"><img src="images/book_6.jpg" class="img-fluid  float-left pull-left mr-2" onclick="createCookieIndex(6)" alt="Foto mit Büchern" title="Foto mit Büchern"></a>
                                 <% if (!sAuthor.equalsIgnoreCase("")) { %>
                                     <span class="pic_text"><%= sAuthor%></span><br/>
                                 <% } 
@@ -400,7 +400,7 @@
                                 <% } 
                                    if (!sPrice.equalsIgnoreCase("")) {
                                 %>
-                                    <span class="pic_text">GBP <%= sPrice %></span><br/>
+                                    <span class="pic_text">&euro; <%= sPrice %></span><br/>
                                 <% } %>
                             </div>
                             <div class="col-lg-1 col-md-1 col-sm-1 book_L">
@@ -419,7 +419,7 @@
                                 <% } 
                                    if (!sPrice.equalsIgnoreCase("")) { 
                                 %>
-                                    <div class="pic_text_below">GBP <%= sPrice %></div>
+                                    <div class="pic_text_below">&euro; <%= sPrice %></div>
                                 <% } %>
                             </div>
                         </div>
@@ -432,7 +432,7 @@
                                 // assign title, author name, price, isbn and description to the variables
                                 bookInformation(rs);
                             } catch (SQLException e) {
-                                System.out.println("An exception occured: " + e.getMessage());
+                                System.out.println("Eine Ausnahme ist aufgetreten: " + e.getMessage());
                             }
                         %>
                         
@@ -442,7 +442,7 @@
                                 <!-- @@@@@@@@@@@ DO IT -- change the TITLE and ALT (in the img tag) to the title of the book -->
                                 
                                 <!-- pull-left mr-2 is used for spacing between the image and the text -->
-                                <a href="ShowBook"><img src="images/book_7.jpg" class="img-fluid  float-left pull-left mr-2" alt="picture of a book" onclick="createCookieIndex(7)" title="picture of a book"></a>
+                                <a href="ShowBook"><img src="images/book_7.jpg" class="img-fluid  float-left pull-left mr-2" alt="Foto mit Büchern" onclick="createCookieIndex(7)" title="Foto mit Büchern"></a>
                                 <% if (!sAuthor.equalsIgnoreCase("")) { %>
                                     <span class="pic_text"><%= sAuthor%></span><br/>
                                 <% }
@@ -452,7 +452,7 @@
                                 <% } 
                                    if (!sPrice.equalsIgnoreCase("")) {
                                 %>
-                                    <span class="pic_text">GBP <%= sPrice %></span><br/>
+                                    <span class="pic_text">&euro; <%= sPrice %></span><br/>
                                 <% } %>
                             </div>
                             <div class="col-lg-1 col-md-1 col-sm-1 book_L">
@@ -471,7 +471,7 @@
                                 <% }
                                    if (!sPrice.equalsIgnoreCase("")) {
                                 %>
-                                    <div class="pic_text_below">GBP <%= sPrice %></div>
+                                    <div class="pic_text_below">&euro; <%= sPrice %></div>
                                 <% } %> 
                             </div>
                         </div>
@@ -484,7 +484,7 @@
                                 // assign title, author name, price, isbn and description to the variables
                                 bookInformation(rs);
                             } catch (SQLException e) {
-                                System.out.println("An exception occured: " + e.getMessage());
+                                System.out.println("Eine Ausnahme ist aufgetreten: " + e.getMessage());
                             }
                         %>
                         
@@ -494,7 +494,7 @@
                                 <!-- @@@@@@@@@@@ DO IT -- change the TITLE and ALT to the title of the book -->
                                 
                                 <!-- pull-left mr-2 is used for spacing between the image and the text -->
-                                <a href="ShowBook"><img src="images/book_8.jpg" class="img-fluid  float-left pull-left mr-2" alt="picture of a book" onclick="createCookieIndex(8)" title="picture of a book"></a>
+                                <a href="ShowBook"><img src="images/book_8.jpg" class="img-fluid  float-left pull-left mr-2" alt="Foto mit Büchern" onclick="createCookieIndex(8)" title="Foto mit Büchern"></a>
                                 <% if (!sAuthor.equalsIgnoreCase("")) { %>
                                     <span class="pic_text"><%= sAuthor%></span><br/>
                                 <% } 
@@ -504,7 +504,7 @@
                                 <% } 
                                    if (!sPrice.equalsIgnoreCase("")) {
                                 %>
-                                    <span class="pic_text">GBP <%= sPrice %></span><br/>
+                                    <span class="pic_text">&euro; <%= sPrice %></span><br/>
                                 <% } %>
                             </div>
                             <div class="col-lg-1 col-md-1 col-sm-1 book_L">
@@ -523,7 +523,7 @@
                                 <% } 
                                    if (!sPrice.equalsIgnoreCase("")) {
                                 %>
-                                    <div class="pic_text_below">GBP <%= sPrice %></div>
+                                    <div class="pic_text_below">&euro; <%= sPrice %></div>
                                 <% } %>    
                             </div>
                         </div>
@@ -536,7 +536,7 @@
                                 // assign title, author name, price, isbn and description to the variables
                                 bookInformation(rs);
                             } catch (SQLException e) {
-                                System.out.println("An exception occured: " + e.getMessage());
+                                System.out.println("Eine Ausnahme ist aufgetreten: " + e.getMessage());
                             }
                         %>
                         
@@ -546,7 +546,7 @@
                                 <!-- @@@@@@@@@@@ DO IT -- change the TITLE and ALT to the title of the book -->
                                 
                                 <!-- pull-left mr-2 is used for spacing between the image and the text -->
-                                <a href="ShowBook"><img src="images/book_9.jpg" class="img-fluid  float-left pull-left mr-2" alt="picture of a book" onclick="createCookieIndex(9)" title="picture of a book"></a>
+                                <a href="ShowBook"><img src="images/book_9.jpg" class="img-fluid  float-left pull-left mr-2" alt="Foto mit Büchern" onclick="createCookieIndex(9)" title="Foto mit Büchern"></a>
                                 <% if (!sAuthor.equalsIgnoreCase("")) { %>
                                     <span class="pic_text"><%= sAuthor%></span><br/>
                                 <% } 
@@ -556,7 +556,7 @@
                                 <% } 
                                    if (!sPrice.equalsIgnoreCase("")) {
                                 %>
-                                    <span class="pic_text">GBP <%= sPrice %></span><br/>
+                                    <span class="pic_text">&euro; <%= sPrice %></span><br/>
                                 <% } %>
                             </div>
                             <div class="col-lg-1 col-md-1 col-sm-1 book_L">
@@ -575,7 +575,7 @@
                                 <% }
                                    if (!sPrice.equalsIgnoreCase("")) {
                                 %>
-                                    <div class="pic_text_below">GBP <%= sPrice %></div>
+                                    <div class="pic_text_below">&euro; <%= sPrice %></div>
                                 <% } %>
                             </div>
                         </div>
@@ -588,7 +588,7 @@
                                 // assign title, author name, price, isbn and description to the variables
                                 bookInformation(rs);
                             } catch (SQLException e) {
-                                System.out.println("An exception occured: " + e.getMessage());
+                                System.out.println("Eine Ausnahme ist aufgetreten: " + e.getMessage());
                             }
                         %>
                         &nbsp;
@@ -597,7 +597,7 @@
                                 <!-- @@@@@@@@@@@ DO IT -- change the TITLE and ALT ( in the img tag ) to the title of the book -->
                                 
                                 <!-- pull-left mr-2 is used for spacing between the image and the text -->
-                                <a href="ShowBook"><img src="images/book_10.jpg" class="img-fluid  float-left pull-left mr-2" alt="picture of a book" onclick="createCookieIndex(10)" title="picture of a book"></a>
+                                <a href="ShowBook"><img src="images/book_10.jpg" class="img-fluid  float-left pull-left mr-2" alt="Foto mit Büchern" onclick="createCookieIndex(10)" title="Foto mit Büchern"></a>
                                 <% if (!sAuthor.equalsIgnoreCase("")) { %>
                                     <span class="pic_text"><%= sAuthor%></span><br/>
                                 <% } 
@@ -607,7 +607,7 @@
                                 <% }
                                    if (!sPrice.equalsIgnoreCase("")) {
                                 %>
-                                    <span class="pic_text">GBP <%= sPrice %></span><br/>
+                                    <span class="pic_text">&euro; <%= sPrice %></span><br/>
                                 <% } %>
                             </div>
                             <div class="col-lg-1 col-md-1 col-sm-1 book_L">
@@ -626,7 +626,7 @@
                                 <% }
                                    if (!sPrice.equalsIgnoreCase("")) {
                                 %>
-                                    <div class="pic_text_below">GBP <%= sPrice %></div>
+                                    <div class="pic_text_below">&euro; <%= sPrice %></div>
                                 <% } %>
                             </div>
                         </div>
@@ -666,7 +666,7 @@
                                     ********************/Lesen/Mitarbeiter ist die Website für Mitarbeiter und Administratoren
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-info" data-dismiss="modal">Abschließen</button>
                                 </div>
                             </div>
                         </div>

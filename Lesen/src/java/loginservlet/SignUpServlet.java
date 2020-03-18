@@ -68,10 +68,11 @@ public class SignUpServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        try{	    
+        try {	    
             // read the text from the username, passw, first_name, last_name, admin (the login_form.jsp) 
             String userName = request.getParameter("username"); 
             String password = request.getParameter("passw1");
+            String anrede = request.getParameter("anrede");
             String first_name = request.getParameter("first_name");
             String last_name = request.getParameter("last_name");
             String admin = request.getParameter("admin");
@@ -103,7 +104,7 @@ public class SignUpServlet extends HttpServlet {
                 response.sendRedirect("error_succ.jsp"); // show the page with the message the new user signed up successfully 
             } else { // the username and password doesn't exist
                 // method signup returns TRUE if the new user was successfully added to the table login, otherwise it returns FALSE
-                boolean result = UserDAO.signUp(userName, password, name, admin);
+                boolean result = UserDAO.signUp(userName, password, anrede, name, admin);
 
                 if (result){ // the new user was added to the database successfully 
                     // setting the hSession (to pass them to the page error_succ.jsp) and loading the page error_succ.jsp

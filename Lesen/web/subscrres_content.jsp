@@ -12,7 +12,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Lesen - Subscription</title>
+        <title>Lesen - Newsletter</title>
         
         <style>
             .red_text {
@@ -36,7 +36,7 @@
                     <br /><br />
                     <div> 
                         <!-- horizontally centering the picture using center-image, img-fluid is for responsive image -->
-                        <img src="images/books.png" class="img-fluid center-image" alt="picture of books" title="picture of books"> 
+                        <img src="images/books.png" class="img-fluid center-image" alt="Foto mit Büchern" title="Foto mit Büchern"> 
                     </div>
                 </div>
                 
@@ -47,7 +47,7 @@
                             <div class="col">
                                 &nbsp; &nbsp;
                                 <br /><br /><br /><br /><br />
-                                <h3 class="text-info">Subscribe</h3>
+                                <h3 class="text-info">Newsletter</h3>
                                 <br /><br /> 
                                 <%  HttpSession hSession = LesenMethoden.returnSession(request);
                                     hSession.setAttribute("subscribe", "true");
@@ -59,13 +59,13 @@
                                     exOccurred = String.valueOf(hSession.getAttribute("db_exoccurred"));
                                     
                                     if (validEmail.equalsIgnoreCase("false"))
-                                        out.print("<span class=\"red_text\">You entered an invalid email address!</span>");
+                                        out.print("<span class=\"red_text\">Sie haben eine ungültige E-Mail Adresse eingegeben.</span>");
                                     else if (exOccurred.equalsIgnoreCase("exists"))
-                                        out.print("<span class=\"red_text\">The email you entered already exists in the database!</span>");
+                                        out.print("<span class=\"red_text\">Diese E-Mail ist bereits registriert.</span>");
                                     else if (exOccurred.equalsIgnoreCase("true"))
-                                        out.print("<span class=\"red_text\">An error occurred while accessing the database!</span>"); 
+                                        out.print("<span class=\"red_text\">Während des Datenbankzugriffs ist ein Fehler aufgetreten.</span>"); 
                                     else {
-                                        out.print("Your email was added successfully to the database.<br />Thank you for subscribing to our newsletter!");
+                                        out.print("Ihre Newsletter-Anmeldung war erfolgreich!<br /> Von jetzt an erhalten Sie von uns spannende Produktempfehlungen und Angebote.");
                                     } 
 
                                     if ((page_name.equalsIgnoreCase("null")) || (page_name.equalsIgnoreCase("")) || (page_name == null)) 
@@ -77,7 +77,7 @@
                                     <br /><br /><br />
                                     <!-- adding the button Subscribe, btn-info is used for defining the color of the button,
                                          form-control-sm is used for smaller size of the button -->
-                                    <button type="submit" class="btn btn-info btn-sm" id="btnClose">Close</button>
+                                    <button type="submit" class="btn btn-info btn-sm" id="btnClose">Zurück</button>
                                 </form>    
                             </div> <!-- end of class="col" -->
                             

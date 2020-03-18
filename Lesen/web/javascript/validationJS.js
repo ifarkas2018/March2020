@@ -47,13 +47,13 @@ function isNumber(formid, input_field, num_type, msg_field, characters, dec_poin
         // if the value entered in a isbn is not a nuumber (if characters is true, number can contain a %, _)
         if (!regex.test(number)) {
             if (characters && dec_point) { // %, _, . can be entered in the input field (beside digits)
-                document.getElementById(msg_field).innerHTML = "* Can contain only digits (wildcards and decimal point)"; // show the message
+                document.getElementById(msg_field).innerHTML = "* Erlaubte Zeichen sind: Zahlen % _ ."; // show the message
             } else if (dec_point) { 
-                document.getElementById(msg_field).innerHTML = "* Can contain only digits (and decimal point)"; 
+                document.getElementById(msg_field).innerHTML = "* Erlaubte Zeichen sind Zahlen und ."; 
             } else if (characters) {
-                document.getElementById(msg_field).innerHTML = "* Can contain only digits (and wildcards)"; 
+                document.getElementById(msg_field).innerHTML = "* Erlaubte Zeichen sind Zahlen % _"; 
             } else {
-                document.getElementById(msg_field).innerHTML = "* Can contain only digits"; // show the message
+                document.getElementById(msg_field).innerHTML = "* Erlaubte Zeichen sind Zahlen"; // show the message
             }
             setVal( num_type, 'false' );
         } else {
@@ -102,16 +102,16 @@ function valLetters(input_field, message_span, name_type, characters, required) 
             setNameVal(name_type, 'false');
             // NAME_VALIDATION = 'false';
             if (characters)
-                message_span.innerHTML = "* Can contain letters, commas, apostrophies, hyphen, space, wildcards";
+                message_span.innerHTML = "* Erlaubte Zeichen sind Buchstaben Leerschritt ' , - % _";
             else
-                message_span.innerHTML = "* Can contain letters, commas, apostrophies, hyphen, space";
+                message_span.innerHTML = "* Erlaubte Zeichen sind Buchstaben Leerschritt ' , -";
             setNameVal(name_type, 'false');
             // NAME_VALIDATION = 'false';
         } else { // the user entered characters which are letters (in the input_field)
             setNameVal(name_type, 'true');
             // NAME_VALIDATION = 'true';
             if (required == 'true') {
-                message_span.innerHTML = "* Required Field";
+                message_span.innerHTML = "* Pflichtfeld";
             } else {
                 message_span.innerHTML = "";
             }
@@ -120,13 +120,76 @@ function valLetters(input_field, message_span, name_type, characters, required) 
         if (required == 'true') {
             setNameVal(name_type, 'false');
             // NAME_VALIDATION = 'false';
-            message_span.innerHTML = "* Required Field";
+            message_span.innerHTML = "* Pflichtfeld";
         } else {
             setNameVal(name_type, 'true');
             // NAME_VALIDATION = 'true';
             message_span.innerHTML = "";
         }
     }
+}
+
+// length8: returns whether the length of the password is at least 8 
+function length8(passw) {
+    return (passw.length >= 8);
+}
+
+// hasUpperCChar: returns whether the password contains upper case character
+function hasUpperCChar(passw) {
+    var regex = /[A-Z]/; // The string should contain an upper case character
+    upperChar = regex.test(passw);
+    return upperChar;
+}
+
+// hasLowerCChar: returns whether the password contains lower case character
+function hasLowerCChar(passw) {
+    var regex = /[a-z]/; // The string should contain an upper case character
+    lowerChar = regex.test(passw);
+    return lowerChar;
+}
+
+// passwordPattern: is the password of a certain pattern (length is at least 8 chracters and contains lower and upper case letters and a digit)
+// returns true if the password is of certain pattern, otherwise it returns false 
+function passwordPattern(passw) {
+    // is the password at least 8 characters long
+    if (length8(passw)) {
+        // does the password contain upper case charcters
+        if (hasUpperCChar(passw)) {
+            // does the password contain lower case charcters
+            if (hasLowerCChar(passw)) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    } else {
+        return false;
+    }
+}
+
+// checkFormPassw: if both passwords are of a certain pattern and the validation was successful then return TRUE otherwise returns FALSE
+// message_span - the message is shown here
+function checkFormPassw(passw1, passw2, message_span) {
+    returnVal = false;
+    // if the password has a certain pattern (length is at least 8 chracters and contains lower and upper case letters and a digit)
+    if ((passwordPattern(passw1)) && (passwordPattern(passw2))) {
+        if ((NAME_VAL === 'true') && (FNAME_VAL === 'true') && (LNAME_VAL === 'true') && (ISBN_VAL === 'true') && (PRICE_VAL === 'true') && (PG_VAL === 'true') && (YRPUBL_VAL === 'true')) { 
+            returnVal = true;
+        } else {
+            returnVal = false;
+        }
+    } else {
+        returnVal = false;
+    }
+    
+    if (returnVal === false) {
+        alertStart = "<div class='alert alert-danger' role='alert'>"; // danger alert
+        alertEnd = "</div>";
+        document.getElementById(message_span).innerHTML ="<br />" + alertStart + "Bitte überprüfen Sie Ihre Passwortangabe " + alertEnd; 
+    }
+    return returnVal;
 }
 
 // checkForm: if the validation was successful then return TRUE otherwise return FALSE

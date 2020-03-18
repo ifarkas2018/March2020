@@ -97,23 +97,24 @@
                                                         if (isErrPage.equals("false")) { // an error didn't occur
                                                     %>
                                                             <!-- input element used for entering the email; form-control-sm is used for smaller size of the input element -->
-                                                            <input class="form-control form-control-sm" name="subscr_email" id="subscr_email" maxlength="35" id="subscr_email" type="text" placeholder="Email" required>
+                                                            <input class="form-control form-control-sm" name="subscr_email" id="subscr_email" maxlength="35" id="subscr_email" type="text" placeholder="E-Mail" required>
                                                     <%
                                                         } else {
                                                     %>
                                                             <!-- input element used for entering the email; form-control-sm is used for smaller size of the input element -->
-                                                            <input class="form-control form-control-sm" name="subscr_email" id="subscr_email" maxlength="35" id="subscr_email" type="text" placeholder="Email" required disabled>
+                                                            <input class="form-control form-control-sm" name="subscr_email" id="subscr_email" maxlength="35" id="subscr_email" type="text" placeholder="E-Mail" required disabled>
                                                     <%
                                                         }
                                                     %>
                                                 </div>
                                             </div>
                                             
-                                            <div class="row"> <!- adding a new row the grid ->
+                                            <div class="row"> <!-- adding a new row the grid -->
                                                 <div class="col">
                                                     &nbsp; &nbsp;
                                                 </div>
                                             </div>
+                                                   
                                             
                                             <div class="row"> <!-- adding a new row the grid -->
                                                 <div class="col">
@@ -162,7 +163,7 @@
                              12 columns on the extra small sized screens  -->
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <!-- adding the copyright information at the bottom of the footer -->
-                            <div class="copyright smaller-text"> Copyright &copy; 2018 Lesen. All rights reserved. 94 Grosvenor Ave., London SW1 5RD</div>
+                            <div class="copyright smaller-text"> &copy; Copyright 2018 - Lesen GmbH - Bruckbauerstraße 25, 10115 Berlin</div>
                         </div>
                     </div>
                 </div> <!-- end of the class="container" -->

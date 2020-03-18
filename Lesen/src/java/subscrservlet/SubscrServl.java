@@ -139,7 +139,7 @@ public class SubscrServl extends HttpServlet {
             // show the page subscrres_page.jsp
             response.sendRedirect("subscrres_page.jsp"); // redirects the response to subscrres_page.jsp
         } catch (Exception e){ // Throwable
-            System.out.print("The following error occured: ");
+            System.out.print("Der folgende Fehler ist aufgetreten: ");
             System.out.println(e.getMessage());
         }
     }

@@ -44,7 +44,7 @@ public class UserDAO {
                 }
             }
         } catch (Exception ex) {
-            System.out.println("Log In failed: An Exception has occurred! " + ex);
+            System.out.println("Der folgende Fehler ist aufgetreten: " + ex);
         } 
 	    
         // some exception handling
@@ -107,7 +107,7 @@ public class UserDAO {
            else
                returnVal = false; // the user doesn't exist in the database
         } catch (Exception ex) {
-            System.out.println("Selecting the user with the entered username and password failed: An Exception has occurred! " + ex);    
+            System.out.println("Der folgende Fehler ist aufgetreten: " + ex);    
         } 
         
         // some exception handling
@@ -144,8 +144,20 @@ public class UserDAO {
     }
             
     // method signUp returns TRUE if the new user was successfully added to the table login, otherwise it returns FALSE
-    public static boolean signUp(String userName, String password, String name, String admin) {
+    public static boolean signUp(String userName, String password, String anrede, String name, String admin) {
         boolean returnVal = false; // was the inserting of the new user successful
+        
+        switch (anrede) {
+            case "none":
+                anrede = "";
+                break;
+            case "frau":
+                anrede = "Frau";
+                break;
+            case "herr":
+                anrede = "Herr";
+                break;
+        }
         
         // preparing some objects for connection 
         PreparedStatement pStmt = null;       
@@ -153,12 +165,19 @@ public class UserDAO {
         // the query
         String loginQuery = "insert into login( username, passw";
         
+        // if the user entered the title
+        if (!anrede.equals(""))
+            loginQuery += ", title"; // add to the query , title
+        
         // if the user entered a name
-        if (!name.equals(""))
+        if ((!name.equals("")) || (!name.equals("")))
             loginQuery += ", name"; // add to the query , name
 
         loginQuery += ", adm"; // add to the query , adm
         loginQuery += " ) values ( '" + userName + "', '" + password + "'";
+        // if the user entered the title add the title to the query
+        if (!anrede.equals(""))
+            loginQuery += ", '" + anrede + "'";
         // if the user entered a name add the name to the query
         if (!name.equals(""))
             loginQuery += ", '" + name + "'";
@@ -175,7 +194,7 @@ public class UserDAO {
            pStmt.execute(loginQuery); // executing the query
            returnVal = true; // the new user was added successfully
         } catch (Exception ex) {
-            System.out.println("Adding a new user failed: An Exception has occurred! " + ex);    
+            System.out.println("Der folgende Fehler ist aufgetreten: " + ex);    
         } 
         
         // some exception handling
@@ -184,7 +203,7 @@ public class UserDAO {
                 try {
                     pStmt.close(); // closing the PreparedStatement object
                 } catch (Exception e) {
-                    System.out.println("An Exception has occurred! " + e); 
+                    System.out.println("Der folgende Fehler ist aufgetreten: " + e); 
                 }
                 pStmt = null;
             }
@@ -193,7 +212,7 @@ public class UserDAO {
                 try {
                     currentCon.close(); // closing the Connection object
                 } catch (Exception e) {
-                    System.out.println("An Exception has occurred! " + e); 
+                    System.out.println("Der folgende Fehler ist aufgetreten: " + e); 
                 }
                 currentCon = null;
             }

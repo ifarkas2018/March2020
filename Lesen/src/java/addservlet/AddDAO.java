@@ -215,7 +215,7 @@ public class AddDAO {
                     con.close(); // closing the Connection object
                 } catch (Exception e) {
                     returnStr = "ERR_DB";
-                    System.out.print("The following error occured: ");
+                    System.out.print("Der folgende Fehler ist aufgetreten: ");
                     System.out.println(e.getMessage());
                 }
                 con = null;
@@ -226,7 +226,7 @@ public class AddDAO {
                     rs.close(); // closing the RecordSet object
                 } catch (Exception e) {
                     returnStr = "ERR_DB";
-                    System.out.print("The following error occured: ");
+                    System.out.print("Der folgende Fehler ist aufgetreten: ");
                     System.out.println(e.getMessage());
                 }
                 rs = null;
@@ -237,7 +237,7 @@ public class AddDAO {
                     stmt.close(); // closing the Statement object
                 } catch (Exception e) {
                     returnStr = "ERR_DB";
-                    System.out.print("The following error occured: ");
+                    System.out.print("Der folgende Fehler ist aufgetreten: ");
                     System.out.println(e.getMessage());
                 }
                 stmt = null;
@@ -248,7 +248,7 @@ public class AddDAO {
                     preparedStmt.close(); // closing the Statement object
                 } catch (Exception e) {
                     returnStr = "ERR_DB";
-                    System.out.print("The following error occured: ");
+                    System.out.print("Der folgende Fehler ist aufgetreten: ");
                     System.out.println(e.getMessage());
                 }
                 preparedStmt = null;

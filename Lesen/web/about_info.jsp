@@ -51,7 +51,7 @@
                                 <p> Lesen ist ein Erlebnis. Bücher machen die Welt begreifbar. Beflügelt von immer neuen Impulsen aus 
                                     der Welt der Bücher kreieren wir bei Lesen in einer einzigartigen Mischung aus persönlicher 
                                     Beratung, inspirierenden Sortimenten und innovativen digitalen Lösungen, zukunftsweisende Lesewelten 
-                                    und nahtlos  ineinandergreifende Einkaufserlebnisse. Damit unsere Kunden die passende Lektüre finden 
+                                    und ineinandergreifende Einkaufserlebnisse. Damit unsere Kunden die passende Lektüre finden 
                                     – immer und überall.
                                 </p>
                                 

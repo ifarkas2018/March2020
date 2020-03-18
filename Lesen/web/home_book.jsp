@@ -48,7 +48,7 @@
                 <div class="col-lg-6 col-md-6"> 
                     <br /><br />
                     <div> <!-- horizontally centering the picture using center-image, img-fluid is for responsive image -->
-                        <img src="images/books.png" class="img-fluid center-image" alt="picture of books" title="picture of books"> 
+                        <img src="images/books.png" class="img-fluid center-image" alt="Foto mit Büchern" title="Foto mit Büchern"> 
                     </div>
                 </div>
                        
@@ -58,7 +58,7 @@
                             <div class="col">
                                 &nbsp; &nbsp;
                                 <br/>
-                                <h3 class="text-info">Show Book</h3><br/>
+                                <h3 class="text-info">Das Buch</h3><br/>
                                 <%
                                     HttpSession hSession = LesenMethoden.returnSession(request);
                                     hSession.setAttribute("webpg_name", "home_book.jsp");
@@ -83,7 +83,9 @@
                                     
                                         if (!(rs.next())) { // there is no information for that book
                                             out.println("<br /><br /><br />");
-                                            out.println("<span class=\"text-warning\">There is no information about the book!</span>");
+                                            out.println("Wir haben leider <span class=\"text-warning\">keine Treffer zu Ihrer Suche gefunden.!</span>");
+                                            out.println("<br />");
+                                            out.println("Überprüfen Sie die Rechtschreibung oder versuchen Sie es mit einem ähnlichen Suchbegriff.");
                                             out.println("<br /><br /><br /><br /><br />");
                                         } else {
                                             // show the result in an unordered list
@@ -99,11 +101,11 @@
                                             String sISBN = rs.getString("isbn");
                                             // show the value for the title, author and price
                                             String descr = rs.getString("descr");
-                                            out.print("<li><b>" + sTitle + "</b> by (author) " + sAuthor ); 
+                                            out.print("<li><b>" + sTitle + "</b> von (Autor) " + sAuthor ); 
                                             
                                             // if there is value for the price : show it
                                             if (sPrice != null && !sPrice.equalsIgnoreCase("")){
-                                                out.print(" (<b>price: </b>" + sPrice + " GBP)" + "<br/>");
+                                                out.print(" (<b>Preis: </b>&euro;" + sPrice + ")" + "<br/>");
                                             }
                                                 
                                             // if there is an ISBN : show it
@@ -113,7 +115,7 @@
                                                 
                                             // if there is a book description : show it
                                             if (descr != null && !descr.equalsIgnoreCase("")) {
-                                                out.print("<br /><b>" + "Description: </b>" + descr );
+                                                out.print("<br /><b>" + "Beschreibung: </b>" + descr );
                                             }
                                                 
                                             out.print("</li>");
@@ -125,8 +127,8 @@
                                         out.println("</form>");
                                     } catch(Exception e) {
                                         String sMessage = "ERR_DB";
-                                        String sTitle = "Show Book!"; // used for passing the title from one JSP script to the other
-                                        hSession.setAttribute("source_name", "Show Book"); // on which page I am now
+                                        String sTitle = "Das Buch"; // used for passing the title from one JSP script to the other
+                                        hSession.setAttribute("source_name", "Das Buch"); // on which page I am now
                                         hSession.setAttribute("title", sTitle); // setting the attribute message to the value sTitle
                                         hSession.setAttribute("message", sMessage); // setting the attribute message to the value sMessage
                                         response.sendRedirect("error_succ.jsp"); // redirects the response to error_succ.jsp

@@ -68,10 +68,6 @@
         <servlet-name>ShowBook</servlet-name>
         <url-pattern>/ShowBook</url-pattern>
     </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>TestServlet</servlet-name>
-        <url-pattern>/TestServlet</url-pattern>
-    </servlet-mapping>
     <session-config>
         <session-timeout>
             30

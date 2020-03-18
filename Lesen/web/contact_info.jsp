@@ -64,13 +64,13 @@
                                 <br/>
                                 <!-- information about the store - London -->
                                 <span class="text-warning">
-                                    <font size="+2">Zürich</font>
+                                    <font size="+2">Berlin</font>
                                 </span>
                                 <br />
-                                @@@@@@@@@@@ 94 Grosvenor Ave., London SW1 5RD <br/>
+                                Bruckbauerstraße 25, 10115 Berlin<br/>
                                 E-Mail: 
                                 <span class="email">
-                                    <a href="mailto:london@lesen.de?subject=Feedback&body=Message">!!!!!london@lesen.ch</a>
+                                    <a href="mailto:lesen.berlin@lesen.de?">lesen.berlin@lesen.de</a>
                                 </span>
                                 <br />
                                 <br />
@@ -96,15 +96,15 @@
                                         </tr>
                                     </tbody>
                                 </table>
+                                <br />
                                 <!-- information about the store - Norwich -->
                                 <span class="text-warning">
                                     <font size="+2">Hamburg</font><br />
                                 </span>
-                                78 Ottostraße, 20251 Hamburg <br />
-                                
+                                Ottostraße 78, 20251 Hamburg <br />   
                                 E-Mail: 
                                 <span class="email">
-                                    <a href="mailto:buchhandel@lesen.de?subject=Feedback&body=Message">@@@@@@@buchhandel@lesen.de</a>
+                                    <a href="mailto:lesen.hamburg@lesen.de?">lesen.hamburg@lesen.de</a>
                                 </span>
                                     
                                 <br />

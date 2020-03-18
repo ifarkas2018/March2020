@@ -11,7 +11,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Lesen - Subscribe</title>
+        <title>Lesen - Newsletter</title>
         <!-- link to the external style sheet -->
         <link href="css/templatecss.css" rel="stylesheet" type="text/css">
     </head>
